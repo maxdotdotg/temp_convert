@@ -4,7 +4,7 @@ use std::string::String;
 fn main() {
     println!("convert temperatures!");
 
-    loop {
+    let temp = loop {
         println!("how many degrees?");
         // get user supplied degrees
         let mut temp = String::new();
@@ -17,7 +17,10 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
+        break temp;
+    };
 
+    let unit = loop {
         println!("what unit? please enter F or C");
         // get user supplied unit
         let mut unit = String::new();
@@ -31,9 +34,11 @@ fn main() {
             "C" => "C",
             &_ => continue,
         };
+        break unit;
+    };
 
-        println!("converting {} degrees {}", temp, unit);
-
+    println!("converting {} degrees {}", temp, unit);
+    loop {
         // match against unit
         match unit {
             "F" => {
