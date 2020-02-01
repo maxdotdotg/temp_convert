@@ -32,7 +32,7 @@ fn main() {
         let unit = match unit.as_str().to_uppercase().trim() {
             "F" => "F",
             "C" => "C",
-            &_ => continue,
+            _ => continue,
         };
         break unit;
     };
@@ -49,7 +49,7 @@ fn main() {
                 println!("that's {} degrees F", to_f(temp));
                 break;
             }
-            &_ => {
+            _ => {
                 println!("exiting");
                 break;
             }
